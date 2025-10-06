@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="error" id="error"></div>
+
+            <div class="display-container">
+                <div class="display-expression" id="expression"></div>
+                <div class="display-result" id="result">0</div>
+            </div>
+
+            <div class="button-grid">
+                <button class="calc-btn function" onclick="clearAll()">AC</button>
+                <button class="calc-btn function" onclick="deleteOne()">Del</button>
+                <button class="calc-btn function" onclick="percentage()">%</button>
+                <button class="calc-btn operator" onclick="setOperator('÷')">÷</button>
+
+                <button class="calc-btn" onclick="appendNumber('7')">7</button>
+                <button class="calc-btn" onclick="appendNumber('8')">8</button>
+                <button class="calc-btn" onclick="appendNumber('9')">9</button>
+                <button class="calc-btn operator" onclick="setOperator('×')">×</button>
+
+                <button class="calc-btn" onclick="appendNumber('4')">4</button>
+                <button class="calc-btn" onclick="appendNumber('5')">5</button>
+                <button class="calc-btn" onclick="appendNumber('6')">6</button>
+                <button class="calc-btn operator" onclick="setOperator('-')">−</button>
+
+                <button class="calc-btn" onclick="appendNumber('1')">1</button>
+                <button class="calc-btn" onclick="appendNumber('2')">2</button>
+                <button class="calc-btn" onclick="appendNumber('3')">3</button>
+                <button class="calc-btn operator" onclick="setOperator('+')">+</button>
+
+                <button class="calc-btn zero" onclick="appendNumber('0')">0</button>
+                <button class="calc-btn" onclick="appendNumber('.')">.</button>
+                <button class="calc-btn operator" onclick="calculate()">=</button>
+            </div>
+
+            <div class="voice-controls">
+                <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">
+                    <span id="voiceIcon">🎤</span>
+                    <span id="voiceText">Voice Input</span>
+                </button>
+            </div>
+
+            <div class="status-bar" id="status">Tap mic for voice input</div>
+        </div>
+
+        <div class="ai-summary">
+            <div class="ai-header">
+                <div class="ai-icon">🤖</div>
+                <div class="ai-title">AI Summary</div>
+            </div>
+            <div class="ai-content empty" id="aiSummary">
+                No calculations yet. Start calculating or use voice input to begin!
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
